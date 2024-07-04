@@ -1,0 +1,157 @@
+=====================================================================
+Run in a "cmd" Window:
+Navigate to: C:\Users\storl\Financial\ExcelFunctions\bin\Debug\net8.0 (or where your executable is residing)
+In address bar type: cmd (opens a new cmd window)
+Run the following commands:
+=====================================================================
+
+-----------------------------------------------------------------------------------------------
+-- BASIC TVM CALCULATIONS (Compare to attached Github Workbook called: "ExcelFinFunctions2.xlsx"
+-- All the examples for the TVM functions are taken from the Financial Functions examples in Excel.
+-- You can find a list here: "excel financial functions documentation"
+--  https://support.microsoft.com/en-us/office/financial-functions-reference-5658d81e-6035-4f24-89c1-fbf124c2b1d8
+-----------------------------------------------------------------------------------------------
+
+ExcelFunctions.exe --excelfunction Pv --periodicInterestRate 0.00666666667 --numberOfPeriods 240 --pmt_value 500 --fv_value 0 --beg_end 0
+
+ExcelFunctions.exe --excelfunction Fv --periodicInterestRate 0.005000 --numberOfPeriods 10 --pmt_value -200 --pv_value -500 --beg_end 1
+
+ExcelFunctions.exe --excelfunction Pmt --periodicInterestRate 0.00666666667 --numberOfPeriods 10 --fv_value 0 --pv_value 10000 --beg_end 0
+ExcelFunctions.exe --excelfunction Pmt --periodicInterestRate 0.00666666667--numberOfPeriods 10 --fv_value 0 --pv_value 10000 --beg_end 1
+
+
+ExcelFunctions.exe --excelfunction IPmt --periodicInterestRate 0.008333333 --start_period 1 --numberOfPeriods 36 --pv_value 8000 --fv_value 0 --beg_end 0
+ExcelFunctions.exe --excelfunction IPmt --periodicInterestRate 0.10 --start_period 3 --numberOfPeriods 3 --pv_value 8000 --fv_value 0 --beg_end 0
+
+
+ExcelFunctions.exe --excelfunction PPmt --periodicInterestRate 0.008333333 --start_period 1 --numberOfPeriods 24 --pv_value 2000 --fv_value 0 --beg_end 0
+ExcelFunctions.exe --excelfunction PPmt --periodicInterestRate 0.08 --start_period 10 --numberOfPeriods 10 --pv_value 200000 --fv_value 0 --beg_end 0
+
+
+ExcelFunctions.exe --excelfunction Rate --numberOfPeriods 48 --pmt_value -200  --pv_value 8000 --fv_value 0 --beg_end 0
+# ---
+# Note: The second example in the Excel Workbook for this function asks for an annualized Return. 
+# You will take the result from the previous RATE function
+# and multiply it by 12 to get the annual rate.
+# ---
+
+ExcelFunctions.exe --excelfunction NPer --periodicInterestRate 0.01 --pmt_value -100 --pv_value -1000 --fv_value 10000 --beg_end 1 --numdecimals 4
+ExcelFunctions.exe --excelfunction NPer --periodicInterestRate 0.01 --pmt_value -100 --pv_value -1000 --fv_value 10000 --beg_end 0 --numdecimals 4
+ExcelFunctions.exe --excelfunction NPer --periodicInterestRate 0.01 --pmt_value -100 --pv_value -1000 --fv_value 0 --beg_end 0 --numdecimals 4
+# ---
+# Note: I think the Description for the first 2 NPER examples given in the Excel Workbooks are not explained correctly. 
+# See Attached workbook for more details (NPER Worksheet). 
+# ---
+
+ExcelFunctions.exe --excelfunction NPV --periodicInterestRate 0.10 --npv_values "-10000,3000,4200,6800"
+
+ExcelFunctions.exe --excelfunction IRR --periodicInterestRate 0.09 --npv_values "-70000,12000,15000,18000,21000" --numdecimals 3
+ExcelFunctions.exe --excelfunction IRR --periodicInterestRate 0.09 --npv_values "-70000,12000,15000,18000,21000,26000" --numdecimals 3
+ExcelFunctions.exe --excelfunction IRR --periodicInterestRate 0.09 --npv_values "-70000,12000,15000" --numdecimals 3
+
+ExcelFunctions.exe --excelfunction XNPV --periodicInterestRate 0.09 --xnpv_values "-10000,2750,4250,3250,2750" --xnpv_dates "1/1/2008,3/1/2008,10/30/2008,2/15/2009,4/1/2009"
+
+ExcelFunctions.exe --excelfunction XIRR --periodicInterestRate 0.09 --xnpv_values "-10000,2750,4250,3250,2750" --xnpv_dates "1/1/2008,3/1/2008,10/30/2008,2/15/2009,4/1/2009"
+
+--------------------
+--GAAP DEPRECIATION
+--------------------
+ExcelFunctions.exe --excelfunction SLN --cost 77000 --salvageValue 5000 --life 5
+
+ExcelFunctions.exe --excelfunction SYD --cost 77000 --salvageValue 5000 --life 5 --period 4
+
+ExcelFunctions.exe --excelfunction SYD-Schedule --cost 58000 --salvageValue 10000 --life 5
+
+ExcelFunctions.exe --excelfunction DDB --cost 77000 --salvageValue 5000 --life 5 --period 4
+
+ExcelFunctions.exe --excelfunction DDB-Schedule --cost 77000 --salvageValue 5000 --life 7 --factor 2.0
+
+ExcelFunctions.exe --excelfunction DDB --cost 77000 --salvageValue 5000 --life 5 --period 5 --factor 1.5
+
+--------------------
+--MACRS DEPRECIATION
+--------------------
+ExcelFunctions.exe --excelfunction MACRS --cost 27000 --macrsGroup 5-year
+
+ExcelFunctions.exe --excelfunction MACRS --cost 1100000 --macrsGroup 7-year
+
+ExcelFunctions.exe --excelfunction MACRS --cost 880000 --macrsGroup 5-year
+
+ExcelFunctions.exe --excelfunction MACRS --cost 880000 --macrsGroup 15-year
+
+
+
+
+===================================
+RUN INSIDE VSCODE Terminal Window:
+===================================
+------------------------
+--BASIC TVM CALCULATIONS
+------------------------
+dotnet run --excelfunction Pv --periodicInterestRate 0.00666666667 --numberOfPeriods 240 --pmt_value 500 --fv_value 0 --beg_end 0
+
+dotnet run --excelfunction Fv --periodicInterestRate 0.005000 --numberOfPeriods 10 --pmt_value -200 --pv_value -500 --beg_end 1
+
+dotnet run --excelfunction Pmt --periodicInterestRate 0.00666666667 --numberOfPeriods 10 --fv_value 0 --pv_value 10000 --beg_end 0
+dotnet run --excelfunction Pmt --periodicInterestRate 0.00666666667--numberOfPeriods 10 --fv_value 0 --pv_value 10000 --beg_end 1
+
+
+dotnet run --excelfunction IPmt --periodicInterestRate 0.008333333 --start_period 1 --numberOfPeriods 36 --pv_value 8000 --fv_value 0 --beg_end 0
+dotnet run --excelfunction IPmt --periodicInterestRate 0.10 --start_period 3 --numberOfPeriods 3 --pv_value 8000 --fv_value 0 --beg_end 0
+
+
+dotnet run --excelfunction PPmt --periodicInterestRate 0.008333333 --start_period 1 --numberOfPeriods 24 --pv_value 2000 --fv_value 0 --beg_end 0
+dotnet run --excelfunction PPmt --periodicInterestRate 0.08 --start_period 10 --numberOfPeriods 10 --pv_value 200000 --fv_value 0 --beg_end 0
+
+
+dotnet run --excelfunction Rate --numberOfPeriods 48 --pmt_value -200  --pv_value 8000 --fv_value 0 --beg_end 0
+# ---
+# Note: The second example in the Excel Workbook for this function asks for an annualized Return. 
+# You will take the result from the previous RATE function
+# and multiply it by 12 to get the annual rate.
+# ---
+
+dotnet run --excelfunction NPer --periodicInterestRate 0.01 --pmt_value -100 --pv_value -1000 --fv_value 10000 --beg_end 1 --numdecimals 4
+dotnet run --excelfunction NPer --periodicInterestRate 0.01 --pmt_value -100 --pv_value -1000 --fv_value 10000 --beg_end 0 --numdecimals 4
+dotnet run --excelfunction NPer --periodicInterestRate 0.01 --pmt_value -100 --pv_value -1000 --fv_value 0 --beg_end 0 --numdecimals 4
+# ---
+# Note: I think the Description for the first 2 NPER examples given in the Excel Workbooks are not explained correctly. 
+# See Attached workbook for more details (NPER Worksheet). 
+# ---
+
+dotnet run --excelfunction NPV --periodicInterestRate 0.10 --npv_values "-10000,3000,4200,6800"
+
+dotnet run --excelfunction IRR --periodicInterestRate 0.09 --npv_values "-70000,12000,15000,18000,21000" --numdecimals 3
+dotnet run --excelfunction IRR --periodicInterestRate 0.09 --npv_values "-70000,12000,15000,18000,21000,26000" --numdecimals 3
+dotnet run --excelfunction IRR --periodicInterestRate 0.09 --npv_values "-70000,12000,15000" --numdecimals 3
+
+dotnet run --excelfunction XNPV --periodicInterestRate 0.09 --xnpv_values "-10000,2750,4250,3250,2750" --xnpv_dates "1/1/2008,3/1/2008,10/30/2008,2/15/2009,4/1/2009"
+
+dotnet run --excelfunction XIRR --periodicInterestRate 0.09 --xnpv_values "-10000,2750,4250,3250,2750" --xnpv_dates "1/1/2008,3/1/2008,10/30/2008,2/15/2009,4/1/2009"
+
+--------------------
+--GAAP DEPRECIATION
+--------------------
+dotnet run --excelfunction SLN --cost 77000 --salvageValue 5000 --life 5
+
+dotnet run --excelfunction SYD --cost 77000 --salvageValue 5000 --life 5 --period 4
+
+dotnet run --excelfunction SYD-Schedule --cost 77000 --salvageValue 5000 --life 7
+
+dotnet run --excelfunction DDB --cost 77000 --salvageValue 5000 --life 5 --period 4
+
+dotnet run --excelfunction DDB-Schedule --cost 77000 --salvageValue 5000 --life 7 --factor 2.0
+
+dotnet run --excelfunction DDB --cost 77000 --salvageValue 5000 --life 5 --period 5 --factor 1.5
+
+--------------------
+--MACRS DEPRECIATION
+--------------------
+dotnet run --excelfunction MACRS --cost 27000 --macrsGroup 5-year
+
+dotnet run --excelfunction MACRS --cost 1100000 --macrsGroup 7-year
+
+dotnet run --excelfunction MACRS --cost 880000 --macrsGroup 5-year
+
+dotnet run --excelfunction MACRS --cost 880000 --macrsGroup 15-year
+

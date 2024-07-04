@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "RfcD1w9bq6+2p3tFP4XfpOo7wRhWIs6ASAWnMK2ZXnMrxCMDNifsT7VrAdwl93foqJCOPz8z0kcFTgs7ypywWw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\storl\\Financial\\ExcelFunctions\\ExcelFunctions.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\storl\\.nuget\\packages\\excelfinancialfunctions\\3.2.0\\excelfinancialfunctions.3.2.0.nupkg.sha512",
+    "C:\\Users\\storl\\.nuget\\packages\\fsharp.core\\6.0.4\\fsharp.core.6.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}
