@@ -1,4 +1,4 @@
-
+## Follow the steps below to add NuGet packages to VSCode.
 
 1. # Navigate to your VSCode Folder to create the project in:
    # i.e. C:\Users\storl\Financial\ExcelFunctions
