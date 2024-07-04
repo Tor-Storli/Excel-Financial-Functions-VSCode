@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ExcelFunctions")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3c02b77cd73b6c5a358b90e04c5bd3b47441de7")]
 [assembly: System.Reflection.AssemblyProductAttribute("ExcelFunctions")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ExcelFunctions")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
