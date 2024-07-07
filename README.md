@@ -19,7 +19,7 @@
 <b>
 4. Open Package Manager (See 3.c above). Click Top Right button ("Install New Package").
  </b><br><br>
-    <b>a. Search for "ExcelFinancialFunctions" and find the correct package to install (Mine is the first with 1,227,180 downloads v.3.2.0). <br>
+    <b>a. Search for "ExcelFinancialFunctions" and find the correct package to install (Mine is v.3.2.0). <br>
     </b>
     <br>
     <b>
